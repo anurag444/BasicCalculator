@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.plus).setOnClickListener(MainActivity.this);
         findViewById(R.id.divide).setOnClickListener(MainActivity.this);
         findViewById(R.id.zero).setOnClickListener(MainActivity.this);
-        findViewById(R.id.subtract).setOnClickListener(MainActivity.this);
+        findViewById(R.id.minus).setOnClickListener(MainActivity.this);
         findViewById(R.id.multiply).setOnClickListener(MainActivity.this);
         findViewById(R.id.clear).setOnClickListener(MainActivity.this);
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 operatorisTapped(Operator.PLUS);
                 calculationString +=" + ";
                 break;
-            case R.id.subtract:
+            case R.id.minus:
                 operatorisTapped(Operator.SUBTRACT);
                 calculationString +=" - ";
                 break;
