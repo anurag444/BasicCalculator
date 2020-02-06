@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemacas.android.com/tools"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
@@ -13,11 +15,16 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
-        android:layout_marginBottom="16dp"
         android:background="#000"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/calculations"
@@ -31,12 +38,13 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:visibility="visible" />
+
         <TextView
             android:id="@+id/result"
             android:layout_width="match_parent"
-            android:text=""
             android:layout_height="wrap_content"
             android:gravity="end"
+            android:text="0"
             android:textColor="#fff"
             android:textSize="28sp" />
     </LinearLayout>
@@ -45,49 +53,62 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
         android:layout_gravity="bottom"
-        >
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:layout_marginBottom="12dp"
+            android:background="#3CFFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/seven"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="7"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/eight"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="8"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/nine"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -98,11 +119,13 @@
                 android:backgroundTint="@color/keypad_bg3"
                 android:text="9"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/divide"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -113,43 +136,47 @@
                 android:backgroundTint="@color/keypad_bg2"
                 android:text="÷"
                 android:textColor="@color/keypad_text"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/four"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="4"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/five"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="5"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/six"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -160,11 +187,13 @@
                 android:backgroundTint="@color/keypad_bg3"
                 android:text="6"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/multiply"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -175,42 +204,47 @@
                 android:backgroundTint="@color/keypad_bg2"
                 android:text="×"
                 android:textColor="@color/keypad_text"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/one"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="1"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/two"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="2"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/three"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -221,11 +255,13 @@
                 android:backgroundTint="@color/keypad_bg3"
                 android:text="3"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/minus"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -236,8 +272,9 @@
                 android:backgroundTint="@color/keypad_bg2"
                 android:text="-"
                 android:textColor="@color/keypad_text"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -248,29 +285,33 @@
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="c"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/zero"
                 android:layout_width="@dimen/keypad_btn_height"
                 android:layout_height="@dimen/keypad_btn_height"
                 android:layout_margin="1dp"
-                android:backgroundTint="@color/keypad_bg3"
                 android:background="@drawable/circle_gray"
+                android:backgroundTint="@color/keypad_bg3"
                 android:text="0"
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/equal"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -281,11 +322,13 @@
                 android:backgroundTint="@color/keypad_bg3"
                 android:text="="
                 android:textColor="@color/keypad_text2"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight = "1" />
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/plus"
                 android:layout_width="@dimen/keypad_btn_height"
@@ -296,9 +339,9 @@
                 android:backgroundTint="@color/keypad_bg2"
                 android:text="+"
                 android:textColor="@color/keypad_text"
-                android:textSize="25sp"/>
+                android:textSize="27sp" />
         </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

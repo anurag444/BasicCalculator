@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         calculations = findViewById(R.id.calculations);
         result = findViewById(R.id.result);
-        currentnumber = "";
+        currentnumber = "0";
         calculation = 0;
-        calculationString = "";
+        calculationString = "0";
         findViewById(R.id.one).setOnClickListener(MainActivity.this);
         findViewById(R.id.two).setOnClickListener(MainActivity.this);
         findViewById(R.id.three).setOnClickListener(MainActivity.this);
@@ -118,9 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void operatorisTapped(Operator tappedOperator){
         if (currentOperator != null) {
 
-            if (currentnumber != "") {
+            if (currentnumber.equals(" ")) {
                 rightnumber = currentnumber;
-                currentnumber = "";
+                currentnumber = " ";
                 switch (currentOperator) {
                     case PLUS:
                         calculation = Double.parseDouble(leftnumber) + Double.parseDouble(rightnumber);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else {
             leftnumber=currentnumber;
-            currentnumber="";
+            currentnumber=" ";
 
         }
         currentOperator=tappedOperator;
